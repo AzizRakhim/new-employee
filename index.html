@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="viewport" content="width=device-width">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-  <title>Document</title>
+  <title>New Employee</title>
   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -14,6 +14,176 @@
   <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
 </head>
 <body>
+
+  <!-- HERO START -->
+
+  <section id="hero" class="hero d-flex">
+    <div class="hero__left"></div>
+    <div class="hero__right">
+
+      <!-- HERO__HEADER START -->
+
+      <header class="hero__header d-flex align-items-center justify-content-between">
+        <form class="hero__header-form d-flex align-items-center">
+          <i class='bx bx-search'></i>
+          <input type="text" class="hero__header-input" name="header search" placeholder="Search topics" required>
+        </form>
+        <ul class="hero__list d-flex">
+          <li class="hero__item">
+            <button class="hero__header-btn position-relative">
+              <span class="position-relative">
+                <i class='bx bx-bell'></i>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  4
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+              </span>
+            </button>
+          </li>
+          <li class="hero__item">
+            <button class="hero__header-btn position-relative">
+              <span class="position-relative">
+                <i class='bx bx-message-square'></i>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill pill-blue bg-danger">
+                  3
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+              </span>
+            </button>
+          </li>
+          <li class="hero__item">
+            <button class="hero__header-btn">
+              <i class='bx bx-power-off' ></i>
+            </button>
+          </li>
+        </ul>
+      </header>
+
+      <!-- HERO__HEADER END -->
+      <!-- HERO__EMPLOYEE START -->
+
+      <div class="hero__employee d-flex">
+        <div class="hero__employee-icon-box">
+          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="1.5" opacity=".3"></circle><path d="M4.34 17h9.32c-.84-.58-2.87-1.25-4.66-1.25s-3.82.67-4.66 1.25z" opacity=".3"></path><path d="M9 12c1.93 0 3.5-1.57 3.5-3.5S10.93 5 9 5 5.5 6.57 5.5 8.5 7.07 12 9 12zm0-5c.83 0 1.5.67 1.5 1.5S9.83 10 9 10s-1.5-.67-1.5-1.5S8.17 7 9 7zm0 6.75c-2.34 0-7 1.17-7 3.5V19h14v-1.75c0-2.33-4.66-3.5-7-3.5zM4.34 17c.84-.58 2.87-1.25 4.66-1.25s3.82.67 4.66 1.25H4.34zm11.7-3.19c1.16.84 1.96 1.96 1.96 3.44V19h4v-1.75c0-2.02-3.5-3.17-5.96-3.44zM15 12c1.93 0 3.5-1.57 3.5-3.5S16.93 5 15 5c-.54 0-1.04.13-1.5.35.63.89 1 1.98 1 3.15s-.37 2.26-1 3.15c.46.22.96.35 1.5.35z"></path></svg>
+        </div>
+        <div class="hero__employee-box">
+          <h2 class="hero__employee-title">
+            New Employee
+          </h2>
+          <p class="hero__employee-text">
+            Form design with validation
+          </p>
+        </div>
+      </div>
+
+      <div class="hero__info">
+        <div class="hero__searc-box d-flex align-items-center justify-content-between">
+          <div class="hero__search-part position-relative">
+            <form class="hero__search-part-input d-flex align-items-center">
+              <label for="search-input" class="search-label">Search Employee</label>
+              <i class='bx bx-search-alt-2' ></i>
+              <input class="hero__searh-input-real" type="text" name="search" id="search-input">
+            </form>
+          </div>
+          <div class="hero__btn-holder">
+            <button class="hero__btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              + add new
+            </button>
+          </div>
+        </div>
+        <div class="hero__table">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Employee Name</th>
+                <th scope="col">Email Address(Personal)</th>
+                <th scope="col">Mobile number</th>
+                <th scope="col">Department</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="hero__tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="smth d-lg-flex w-100 align-items-center justify-content-between">
+            <h5 class="modal-title" id="staticBackdropLabel">Employee Form</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+        </div>
+        <div class="modal-body d-flex">
+          <div class="hero__modal-box col-6">
+            <div class="hero__modal-input-box">
+              <input type="text" class="hero__modal-input input-name" name="full name" placeholder="Full Name" required>
+            </div>
+            <div class="hero__modal-input-box">
+              <input type="email" class="hero__modal-input input-email" name="email" placeholder="Email" required>
+            </div>
+            <div class="hero__modal-input-box">
+              <input type="tel" class="hero__modal-input input-phone" name="phone" placeholder="Phone" required>
+            </div>
+            <div class="hero__modal-input-box">
+              <input type="text" class="hero__modal-input" name="city" placeholder="City" required>
+            </div>
+          </div>
+          <div class="hero__modal-radio col-6">
+            <div>
+              <p class="gender">Gender</p>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
+                <label class="form-check-label" for="inlineRadio1">Male</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Female</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                <label class="form-check-label" for="inlineRadio3">Other</label>
+              </div>
+            </div>
+            <div>
+              <input class="form-control input-department" list="datalistOptions" id="exampleDataList" placeholder="Department">
+              <datalist id="datalistOptions">
+                <option value="None">
+                <option value="Development">
+                <option value="Marketing">
+                <option value="Accounting">
+                <option value="HR">
+              </datalist> 
+            </div>
+            <div class="date-class">
+              <input type="date" value="2017-06-01">
+            </div>
+            <div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Permanent Employee
+                </label>
+              </div>
+            </div>
+            <div>
+              <button class="modal-submit-btn" data-bs-dismiss="modal">
+                Submit
+              </button>
+              <button class="modal-reset-btn">
+                Reset
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
   </script>
