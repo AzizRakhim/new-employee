@@ -7,90 +7,6 @@ let elCityInput = document.querySelector(".city-input");
 let elTBody = document.querySelector(".hero__tbody");
 let elArr = [];
 
-elNameInput.addEventListener("keyup", () => {
-  let text = document.querySelector(".name-hint");
-  try {
-    let elName = elNameInput.value;
-
-    if (elName == "") {
-      elNameInput.style.outline = "none";
-      elNameInput.style.border = "2px solid red";
-      text.style.color = "red";
-      throw "Enter a valid name";
-    } else {
-      elNameInput.style.outline = "none";
-      elNameInput.style.border = "2px solid green";
-      text.style.color = "green";
-      throw "Success";
-    }
-  } catch (e) {
-    text.innerText = e;
-  }
-});
-
-elEmailInput.addEventListener("keyup", () => {
-  let text = document.querySelector(".email-hint");
-  try {
-    let elName = elEmailInput.value;
-
-    if (!/^\S+@\S+\.\S+$/.test(elName)) {
-      elEmailInput.style.outline = "none";
-      elEmailInput.style.border = "2px solid red";
-      text.style.color = "red";
-      throw "Enter a valid email";
-    } else {
-      elEmailInput.style.outline = "none";
-      elEmailInput.style.border = "2px solid green";
-      text.style.color = "green";
-      throw "Success";
-    }
-  } catch (e) {
-    text.innerText = e;
-  }
-});
-
-elPhoneInput.addEventListener("keyup", () => {
-  let text = document.querySelector(".phone-hint");
-  try {
-    let elName = elPhoneInput.value;
-
-    if (!Number(elName) || elName.length < 12) {
-      elPhoneInput.style.outline = "none";
-      elPhoneInput.style.border = "2px solid red";
-      text.style.color = "red";
-      throw "Enter a valid phone number";
-    } else {
-      elPhoneInput.style.outline = "none";
-      elPhoneInput.style.border = "2px solid green";
-      text.style.color = "green";
-      throw "Success";
-    }
-  } catch (e) {
-    text.innerText = e;
-  }
-});
-
-elDepartmentInput.addEventListener("keyup", () => {
-  let text = document.querySelector(".department-hint");
-  try {
-    let elName = elPhoneInput.value;
-
-    if (elName == "") {
-      elPhoneInput.style.outline = "none";
-      elPhoneInput.style.border = "2px solid red";
-      text.style.color = "red";
-      throw "Enter a valid deaprtment";
-    } else {
-      elPhoneInput.style.outline = "none";
-      elPhoneInput.style.border = "2px solid green";
-      text.style.color = "green";
-      throw "Success";
-    }
-  } catch (e) {
-    text.innerText = e;
-  }
-});
-
 elModalSubmit.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -330,4 +246,75 @@ elArrows.forEach((item) => {
       arrowCount = 0;
     }
   });
+});
+
+let checkIt = 0;
+
+elNameInput.addEventListener("keyup", () => {
+  let text = document.querySelector(".name-hint");
+  try {
+    let elName = elNameInput.value;
+
+    if (elName == "") {
+      elNameInput.style.outline = "none";
+      elNameInput.style.border = "2px solid red";
+      text.style.color = "red";
+      checkIt--;
+      throw "Enter a valid name";
+    } else {
+      elNameInput.style.outline = "none";
+      elNameInput.style.border = "2px solid green";
+      text.style.color = "green";
+      checkIt++;
+      throw "Success";
+    }
+  } catch (e) {
+    text.innerText = e;
+  }
+});
+
+elEmailInput.addEventListener("keyup", () => {
+  let text = document.querySelector(".email-hint");
+  try {
+    let elName = elEmailInput.value;
+
+    if (!/^\S+@\S+\.\S+$/.test(elName)) {
+      elEmailInput.style.outline = "none";
+      elEmailInput.style.border = "2px solid red";
+      text.style.color = "red";
+      checkIt--;
+      throw "Enter a valid email";
+    } else {
+      elEmailInput.style.outline = "none";
+      elEmailInput.style.border = "2px solid green";
+      text.style.color = "green";
+      checkIt++;
+      throw "Success";
+    }
+  } catch (e) {
+    text.innerText = e;
+  }
+});
+
+elPhoneInput.addEventListener("keyup", () => {
+  let text = document.querySelector(".phone-hint");
+  try {
+    let elName = elPhoneInput.value;
+
+    if (!Number(elName) || elName.length < 12) {
+      elPhoneInput.style.outline = "none";
+      elPhoneInput.style.border = "2px solid red";
+      text.style.color = "red";
+      checkIt--;
+      throw "Enter a valid phone number";
+    } else {
+      elPhoneInput.style.outline = "none";
+      elPhoneInput.style.border = "2px solid green";
+      text.style.color = "green";
+      checkIt++;
+      throw "Success";
+    }
+  } catch (e) {
+    text.innerText = e;
+  }
 });
