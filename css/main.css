@@ -387,6 +387,19 @@ th {
   padding: 16px !important;
   font-size: 0.875rem;
   letter-spacing: 0.01071em;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+th:hover {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+th:hover .bx {
+  color: rgba(0, 0, 0, 0.54);
+  opacity: 1;
+  z-index: 100;
 }
 
 td {
@@ -397,5 +410,30 @@ td {
   line-height: 3 !important;
   border-bottom: 1px solid #e0e0e0;
   letter-spacing: 0.01071em;
+}
+
+.head-btn {
+  border: none;
+  background-color: transparent;
+  position: relative;
+  top: 5px;
+}
+
+.head-btn .bx {
+  font-size: 20px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  opacity: 0;
+  z-index: -999;
+}
+
+tr {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+tr:hover {
+  background-color: #fffbf2;
+  cursor: pointer;
 }
 /*# sourceMappingURL=main.css.map */

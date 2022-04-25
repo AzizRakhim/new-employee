@@ -335,6 +335,18 @@ th{
   padding: 16px !important;
   font-size: 0.875rem;
   letter-spacing: 0.01071em;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover{
+    color: rgba(0, 0, 0, 0.54);
+
+    .bx{
+      color: rgba(0, 0, 0, 0.54);
+      opacity: 1;
+      z-index: 100;
+    }
+  }
 }
 
 td{
@@ -345,4 +357,27 @@ td{
   line-height: 3 !important;
   border-bottom: 1px solid rgba(224, 224, 224, 1);
   letter-spacing: 0.01071em;
+}
+
+.head-btn{
+   border: none;
+   background-color: transparent;
+   position: relative;
+   top: 5px;
+
+   .bx{
+      font-size: 20px;
+      transition: all 0.3s ease;
+      opacity: 0;
+      z-index: -999;
+   }
+}
+
+tr{
+  transition: all 0.3s ease;
+
+  &:hover{
+    background-color: #fffbf2;
+    cursor: pointer;
+  }
 }

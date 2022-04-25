@@ -124,31 +124,118 @@ elHeroInput.addEventListener("keyup", () => {
   })
 });
 
+let elHeadBtns = document.querySelectorAll(".head-btn");
 
+let count = 0;
+let emailCount = 0;
+let phoneCount = 0;
+let departmentCount = 0;
 
+elHeadBtns.forEach((item, index) => {
+  item.addEventListener("click", () => {
+    if(index == 0){
+      if(count == 0){
+        elArr.sort(function(a, b){
+          if(a.name.toLowerCase() < b.name.toLowerCase()){
+            return -1;
+          } else if(a.name.toLowerCase() > b.name.toLowerCase()){
+            return 1;
+          }
+        })
+        displayEveything(elArr);
+        count++;
+      } else{
+        elArr.sort(function(a, b){
+          if(a.name.toLowerCase() > b.name.toLowerCase()){
+            return -1;
+          } else if(a.name.toLowerCase() < b.name.toLowerCase()){
+            return 1;
+          }
+        })
+        displayEveything(elArr);
+        count = 0;
+      }
+    } else if(index == 1){
+      if(emailCount == 0){
+        elArr.sort(function(a, b){
+          if(a.email.toLowerCase() < b.email.toLowerCase()){
+            return -1;
+          } else if(a.email.toLowerCase() > b.email.toLowerCase()){
+            return 1;
+          }
+        })
+        displayEveything(elArr);
+        emailCount++;
+      } else{
+        elArr.sort(function(a, b){
+          if(a.email.toLowerCase() > b.email.toLowerCase()){
+            return -1;
+          } else if(a.email.toLowerCase() < b.email.toLowerCase()){
+            return 1;
+          }
+        })
+        displayEveything(elArr);
+        emailCount = 0;
+      }
+    } else if(index == 2){
+      if(phoneCount == 0){
+        elArr.sort(function(a, b){
+          if(a.phone.toLowerCase() < b.phone.toLowerCase()){
+            return -1;
+          } else if(a.phone.toLowerCase() > b.phone.toLowerCase()){
+            return 1;
+          }
+        })
+        displayEveything(elArr);
+        phoneCount++;
+      } else{
+        elArr.sort(function(a, b){
+          if(a.phone.toLowerCase() > b.phone.toLowerCase()){
+            return -1;
+          } else if(a.phone.toLowerCase() < b.phone.toLowerCase()){
+            return 1;
+          }
+        })
+        displayEveything(elArr);
+        phoneCount = 0;
+      }
+    } else if(index == 3){
+      if(departmentCount == 0){
+        elArr.sort(function(a, b){
+          if(a.department.toLowerCase() < b.department.toLowerCase()){
+            return -1;
+          } else if(a.department.toLowerCase() > b.department.toLowerCase()){
+            return 1;
+          }
+        })
+        displayEveything(elArr);
+        departmentCount++;
+      } else{
+        elArr.sort(function(a, b){
+          if(a.department.toLowerCase() > b.department.toLowerCase()){
+            return -1;
+          } else if(a.department.toLowerCase() < b.department.toLowerCase()){
+            return 1;
+          }
+        })
+        displayEveything(elArr);
+        departmentCount = 0;
+      }
+    }  
+  });
+});
 
+let elArrows = document.querySelectorAll(".arrow-btn");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+let arrowCount = 0;
+elArrows.forEach((item) => {
+  item.addEventListener("click", () => {
+    if(arrowCount == 0){
+      item.style.transform = "rotate(180deg)";
+      arrowCount++;
+    } else{
+      item.style.transform = "rotate(0)";
+      arrowCount = 0;
+    }
+  });
+});
